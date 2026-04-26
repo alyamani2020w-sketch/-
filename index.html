@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>🧵 نظام الخياط الاحترافي</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>🧵 نظام الخياط الاحترافي</header>
+
+<!-- ================= الصفحة الرئيسية ================= -->
+<div id="home" class="container">
+
+    <button class="main-btn" onclick="showSection('new')">
+        ➕ قياسات جديدة
+    </button>
+
+    <button class="main-btn" onclick="showSection('saved')">
+        📂 عرض البيانات
+    </button>
+
+    <button class="main-btn" onclick="showSection('stats')">
+        📊 الإحصائيات
+    </button>
+
+</div>
+
+<!-- ================= مؤسسة ================= -->
+<div id="new" class="container hidden">
+
+    <h2>🏢 إنشاء مؤسسة</h2>
+
+    <input id="orgName" placeholder="اسم المؤسسة">
+
+    <button onclick="chooseType('branch')">🏬 إنشاء فروع</button>
+    <button onclick="chooseType('direct')">👤 إضافة مباشر</button>
+
+    <button onclick="goHome()">⬅ رجوع</button>
+
+</div>
+
+<!-- ================= فرع ================= -->
+<div id="branchSection" class="container hidden">
+
+    <h2>🏬 إضافة فرع</h2>
+
+    <input id="branchName" placeholder="اسم الفرع">
+
+    <button onclick="goToMember()">➡ الدخول لإضافة عميل</button>
+
+</div>
+
+<!-- ================= عميل ================= -->
+<div id="memberSection" class="container hidden">
+
+    <h2>👤 إضافة عميل</h2>
+
+    <input id="name" placeholder="اسم العميل">
+
+    <h3>👔 القميص</h3>
+    <input id="shirt_length" placeholder="الطول">
+    <input id="shirt_shoulder" placeholder="الكتف">
+    <input id="shirt_sleeve" placeholder="الكم">
+    <input id="shirt_neck" placeholder="الرقبة">
+    <input id="shirt_width" placeholder="العرض">
+    <input id="shirt_belly" placeholder="البطن">
+
+    <h3>👖 البنطلون</h3>
+    <input id="pants_length" placeholder="الطول">
+    <input id="pants_waist" placeholder="الخصر">
+    <input id="pants_hip" placeholder="الورك">
+    <input id="pants_thigh" placeholder="الفخذ">
+    <input id="pants_knee" placeholder="الركبة">
+    <input id="pants_bottom" placeholder="الفتحة">
+
+    <h3>📝 ملاحظات</h3>
+    <input id="notes" placeholder="ملاحظات العميل">
+
+    <!-- 🔥 الأزرار المهمة (حل المشكلة) -->
+    <button onclick="saveOnly()">💾 حفظ</button>
+    <button onclick="saveAndNew()">➕ عميل جديد</button>
+    <button onclick="addAnotherBranch()">🏬 فرع جديد</button>
+    <button onclick="goHome()">⬅ رجوع للرئيسية</button>
+
+</div>
+
+<!-- ================= عرض البيانات ================= -->
+<div id="saved" class="container hidden">
+
+    <h2>📂 بيانات العملاء</h2>
+
+    <input id="search" placeholder="🔍 بحث باسم العميل" onkeyup="searchData()">
+
+    <div id="tree"></div>
+
+    <button onclick="goHome()">⬅ رجوع</button>
+
+</div>
+
+<!-- ================= الإحصائيات ================= -->
+<div id="stats" class="container hidden">
+
+    <h2>📊 الإحصائيات</h2>
+
+    <div id="statsBox"></div>
+
+    <button onclick="goHome()">⬅ رجوع</button>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
